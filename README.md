@@ -1,2 +1,2 @@
-# to-do-app
- To Do Mini  jQuery Project
+# To-Do App
+Mini jQuery Project
