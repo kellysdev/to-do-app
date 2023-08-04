@@ -1,4 +1,4 @@
-function newItem() {
+$(function newItem() {
     //add a new item to the list:
     let list = $('#list');
     let li = $('<li></li>');
@@ -29,4 +29,4 @@ function newItem() {
 
     //change the order of the list:
     list.sortable();
-}
+})
