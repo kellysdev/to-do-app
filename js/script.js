@@ -16,16 +16,16 @@ $(function newItem() {
         //add the delete button "X":
         let deleteButton = $('<button id="deleteButton"/>X</button>');
         li.append(deleteButton);
-    });
 
-    //crossing out an item from the list:
-    $('li').dblclick (function() {
-        $('li').toggleClass('strike');
-    });
+        //crossing out an item from the list:
+        $('li').on('dblclick', function () {
+            $(this).toggleClass('strike');
+        });
 
-    //delete an item from the list:
-    $('#deleteButton').click (function() {
-        $('li').addClass('delete');
+        //delete an item from the list:
+        $('#deleteButton').on('click', function () {
+            $('li').addClass('delete');
+        });
     });
 
     //change the order of the list:
