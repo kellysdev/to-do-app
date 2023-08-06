@@ -14,7 +14,7 @@ $(function newItem() {
         }
 
         //add the delete button "X":
-        let deleteButton = $('<button id="deleteButton"/>X</button>');
+        let deleteButton = $('<button id="deleteButton"/>x</button>');
         li.append(deleteButton);
 
         //crossing out an item from the list:
