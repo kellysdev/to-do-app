@@ -16,6 +16,9 @@ $(function () {
         //add the delete button "X":
         let deleteButton = $('<button id="deleteButton"/>x</button>');
         li.append(deleteButton);
+
+        //clear the input field after adding an item to the list:
+        $('#input').val('');
     });
 
     //change the order of the list:
@@ -28,7 +31,7 @@ $(function () {
 
     //delete an item from the list:
     $('#deleteButton').on('click', function () {
-        $('li').addClass('delete');
+        $(this).parent().addClass('delete');
     });
 
 });
