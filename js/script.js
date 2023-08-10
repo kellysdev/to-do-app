@@ -19,19 +19,20 @@ $(function () {
 
         //clear the input field after adding an item to the list:
         $('#input').val('');
-    });
-
-    //change the order of the list:
-    $('ol').sortable();
 
     //crossing out an item from the list:
     $('li').on('dblclick', function () {
         $(this).toggleClass('strike');
+        
     });
 
     //delete an item from the list:
     $('#deleteButton').on('click', function () {
         $(this).parent().addClass('delete');
     });
+    });
+
+    //change the order of the list:
+    $('ol').sortable();
 
 });
