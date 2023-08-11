@@ -3,7 +3,7 @@ $(function () {
     let li = $('<li class="listItem"></li>');
 
     //add a new item to the list:
-    $('#button').click (function () {
+    $('#button').click (function newItem() {
         let inputValue = $('#input').val();
         if (inputValue === '') {
             alert("You must write something!");
@@ -20,13 +20,13 @@ $(function () {
     });
 
     //crossing out an item from the list:
-    $('li').on('dblclick', function () {
+    $('li').on('dblclick', function crossOut() {
         $(this).toggleClass('strike');
         
     });
 
     //delete an item from the list:
-    $('#deleteButton').on('click', function () {
+    $('#deleteButton').on('click', function deleteItem() {
         $(this).parent().addClass('delete');
     });
 
