@@ -1,6 +1,5 @@
 $(function () {
     let deleteButton = $('<button id="deleteButton"/>x</button>');
-    let li = $('<li class="listItem"></li>');
 
     //add a new item to the list:
     $('#button').click (function newItem() {
@@ -8,8 +7,7 @@ $(function () {
         if (inputValue === '') {
             alert("You must write something!");
         }else {
-            $('#list').append(li);
-            $('.listItem').append(inputValue);
+            $('#list').append($('<li>' + inputValue + '</li>'));
         }
 
         //add the delete button "X":
@@ -22,7 +20,6 @@ $(function () {
     //crossing out an item from the list:
     $('li').on('dblclick', function crossOut() {
         $(this).toggleClass('strike');
-        
     });
 
     //delete an item from the list:
