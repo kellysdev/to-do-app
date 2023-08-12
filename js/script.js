@@ -1,47 +1,26 @@
-$(function () {
-    //declare global variables:
+$("#button").click(function newItem() {
     let deleteButton = $('<button id="deleteButton">x</button>');
-    let li = $('<li></li>');
+    let li = $("<li></li>");
+    let inputValue = $("#input").val();
 
-    //add a new item to the list:
-    $('#button').click (function newItem() {
-        let inputValue = $('#input').val();
-        if (inputValue === '') {
-            alert("You must write something!");
-        }else {
-            $('#list').append($('<li>' + inputValue + '</li>'));
-        }
+    if (inputValue === "") {
+      alert("You must write something!");
+    } else {
+      $("#list").append(li);
+    }
+  
+    li.append(inputValue);
+    li.append(deleteButton);
 
-        //add the delete button "X":
-        $('li').append(deleteButton);
-
-        //clear the input field after adding an item to the list:
-        // $('#input').val('');
+    li.on("dblclick", function () {
+      $(this).toggleClass("strike");
     });
 
-    //crossing out an item from the list:
-    function crossOut() {
-        $(this).toggleClass('strike');
-    };
-    li.on('dbclick', crossOut());
-
-    //this function worked when it was nested inside the newItem() along with the variables:
-    // $(li).on('dblclick', function crossOut() {
-    //     $(this).toggleClass('strike');
-    // });
-
-    //delete an item from the list:
     function deleteItem() {
-        $(this).parent().addClass('delete');
-    };
-    $('#deleteButton').on('click', deleteItem());
+      $(this).parent().addClass("delete");
+    }
 
-    //this function worked when it was nested inside the newItem() along with the variables:
-    // $('#deleteButton').on('click', function deleteItem() {
-    //     $(this).parent().addClass('delete');
-    // });
-
-    //change the order of the list:
-    $('ol').sortable();
-
-});
+    deleteButton.on("click", deleteItem);
+  
+    $("ol").sortable();
+  });
